@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class RSA {
     // Tạo khóa
-    public static final  int bitLength = 1024;
+    public static final  int bitLength = 2048;
     public static final BigInteger E = new BigInteger("65537"); // E là số nguyên tố
     
     private BigInteger p;
