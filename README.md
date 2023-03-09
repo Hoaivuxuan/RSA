@@ -1,5 +1,3 @@
-Mã hóa RSA là một phương pháp mã hóa khóa công khai được sử dụng rộng rãi để bảo mật thông tin trên internet. Phương pháp này được đặt tên theo ba nhà toán học Rivest, Shamir và Adleman, người đã phát minh ra nó vào năm 1977.
-
 Giải thuật RSA được thực hiện bằng cách sử dụng hai khóa: khóa công khai và khóa bí mật. Khóa công khai được sử dụng để mã hóa thông tin, còn khóa bí mật được sử dụng để giải mã thông tin.
 
 Để tạo khóa RSA, cần làm như sau:
