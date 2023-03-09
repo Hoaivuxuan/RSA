@@ -5,9 +5,10 @@
 package rsa;
 
 import java.math.BigInteger;
+import java.util.Scanner;
 
 /**
- * @author vuxua
+ * @author vuxuanhoai
  */
 public class Main {
     public static void main(String[] args) {
@@ -17,12 +18,13 @@ public class Main {
         person1.initialize_RSA();
         person2.initialize_RSA();
         
-        BigInteger message = new BigInteger("23052021");
-        BigInteger cipher =  person1.encrypt(message, person2.getN());
+        Scanner cin = new Scanner(System.in);  
+        System.out.print("Message: ");
+        BigInteger message = cin.nextBigInteger();
+        BigInteger encryptedMessage =  person1.encrypt(message, person2.getN());
+        BigInteger decryptedMessage = person2.decrypt(encryptedMessage);
         
-        BigInteger decrypted = person2.decrypt(cipher);
-        
-        System.out.println(message);
-        System.out.println(decrypted);
+        System.out.println("Encrypted message: " + encryptedMessage);
+        System.out.println("Decrypted message: " + decryptedMessage);
     }
 }
