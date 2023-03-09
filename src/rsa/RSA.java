@@ -13,7 +13,7 @@ import java.util.Random;
 public class RSA {
     // Tạo khóa
     public static final  int bitLength = 1024;
-    public static final BigInteger E = new BigInteger("65537");
+    public static final BigInteger E = new BigInteger("65537"); // E là số nguyên tố
     
     private BigInteger p;
     private BigInteger q;
@@ -28,11 +28,11 @@ public class RSA {
         phiN = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
         d = E.modInverse(phiN);
     }
-    
+    // Mã hóa thông điệp
     public BigInteger encrypt (BigInteger message, BigInteger partnerN) {
         return message.modPow(E, partnerN);
     }
-    
+    // Giải mã thông điệp
     public BigInteger decrypt (BigInteger cipher) {
         return cipher.modPow(d, n);
     }
