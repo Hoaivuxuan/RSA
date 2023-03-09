@@ -25,3 +25,10 @@ Tính m = c^d mod n.
 Chuyển đổi số nguyên m trở lại thông điệp ban đầu.
 
 Trong quá trình mã hóa và giải mã, ta không bao giờ tiết lộ khóa bí mật d cho bất kỳ ai ngoại trừ chủ sở hữu của nó. Khóa công khai e có thể được chia sẻ công khai để bất kỳ ai đều có thể mã hóa thông điệp.
+
+* Giải thích code:
+  - BigInteger là một lớp trong Java để thực hiện các phép tính toán trên số nguyên lớn.
+  - probablePrime() là một phương thức trong lớp BigInteger của Java, được sử dụng để tạo một số         nguyên tố có khả năng cao (probable prime).
+  - multiply() là một phương thức của lớp BigInteger trong Java, được sử dụng để nhân hai đối tượng       BigInteger lại với nhau.
+  - subtract() là một phương thức của lớp BigInteger trong Java, được sử dụng để trừ hai đối tượng       BigInteger.
+  - modPow() là một phương thức của lớp BigInteger trong Java, được sử dụng để tính toán lũy thừa         modulo của một đối tượng BigInteger khác.
