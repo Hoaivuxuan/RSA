@@ -11,7 +11,7 @@ import java.util.Random;
  * @author vuxuanhoai
  */
 public class RSA {
-
+    // Tạo khóa
     public static final  int bitLength = 1024;
     public static final BigInteger E = new BigInteger("65537");
     
@@ -22,8 +22,8 @@ public class RSA {
     private BigInteger d; // d*e mod φ(n) = 1
     
     public void initialize_RSA () {
-        p = BigInteger.probablePrime(bitLength/2, new Random());
-        q = BigInteger.probablePrime(bitLength/2, new Random());
+        p = BigInteger.probablePrime(bitLength/2, new Random()); // số nguyên tố lớn ngẫu nhiên
+        q = BigInteger.probablePrime(bitLength/2, new Random()); // số nguyên tố lớn ngẫu nhiên
         n = p.multiply(q);
         phiN = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
         d = E.modInverse(phiN);

@@ -17,11 +17,12 @@ public class Main {
         
         person1.initialize_RSA();
         person2.initialize_RSA();
-        
+        // Mã hóa
         Scanner cin = new Scanner(System.in);  
         System.out.print("Message: ");
         BigInteger message = cin.nextBigInteger();
         BigInteger encryptedMessage =  person1.encrypt(message, person2.getN());
+        // Giải mã
         BigInteger decryptedMessage = person2.decrypt(encryptedMessage);
         
         System.out.println("Encrypted message: " + encryptedMessage);
