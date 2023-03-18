@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package rsa;
 
 import java.math.BigInteger;
@@ -29,12 +25,14 @@ public class RSA {
         d = E.modInverse(phiN);
     }
     // Mã hóa thông điệp
-    public BigInteger encrypt (BigInteger message, BigInteger partnerN) {
-        return message.modPow(E, partnerN);
+    public BigInteger encrypt (BigInteger message, BigInteger N) {
+        return message.modPow(E, N);
     }
+
+
     // Giải mã thông điệp
-    public BigInteger decrypt (BigInteger cipher) {
-        return cipher.modPow(d, n);
+    public BigInteger decrypt (BigInteger C) {
+        return C.modPow(d, n);
     }
 
     public BigInteger getN() {

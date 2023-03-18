@@ -1,10 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package rsa;
 
 import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 /**
@@ -19,13 +18,25 @@ public class Main {
         person2.initialize_RSA();
         //
         Scanner cin = new Scanner(System.in);  
-        System.out.print("Message: ");
-        BigInteger message = cin.nextBigInteger();
-        BigInteger encryptedMessage =  person1.encrypt(message, person2.getN());
-        //
-        BigInteger decryptedMessage = person2.decrypt(encryptedMessage);
-        //
+        System.out.print("Message: ");        
+        String message = cin.nextLine();
+        byte[] plaintextBytes = message.getBytes();
+        BigInteger P = new BigInteger(plaintextBytes);
+
+
+        // ma hoa thong tin gui di
+        BigInteger encryptedMessage =  person1.encrypt(P, person2.getN());
         System.out.println("Encrypted message: " + encryptedMessage);
-        System.out.println("Decrypted message: " + decryptedMessage);
+
+        //thong tin gui di va de bi lay cap tren duong truyen
+        System.out.println(encryptedMessage);
+
+        //thong tin den nguoi nhan va dung khoa bi mat (d,n) de giai ma
+        BigInteger decryptedMessage = person2.decrypt(encryptedMessage);
+
+
+        byte[] decryptedBytesdemo = decryptedMessage.toByteArray();
+        String result = new String(decryptedBytesdemo);     
+        System.out.println("Decrypted message: " + result);
     }
 }
